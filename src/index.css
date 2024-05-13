@@ -2,20 +2,16 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #393D41;
   text-decoration: inherit;
 }
 a:hover {
@@ -26,43 +22,100 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 300px;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h4{
+  font-size: 17px;
+  font-weight: 700;
+}
+
+span{
+  font-size: 15px;
+  font-weight: 400;
+}
+
+h3{
+  font-size: 16px;
+  text-align: left;
+  font-weight:400;
+  font-style: normal;
+}
+
+img{
+  margin-top: 30px;
+  
+  width: 100px;
+  vertical-align: middle;
+}
+
+.username{
+  font-size: 36px;
+  font-weight: 600 ;
+  display: inline;
+  padding-left: 30px;
 }
 
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  width: 440px;
+  height: 40px;
+  margin-top: 30px;
+  padding: 0.6em 10em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 400;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  background-color: #5e5e5e;
+  border: none;
+  color: #dedede;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
+
 button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  color:#5e5e5e;
+  background-color: #dedede;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #000000;
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+    color: #001552;
   }
 }
+
+
+
+/* repozitoriji */ 
+
+.repo-list {
+  list-style-type: none; /* Uklanja crne točkice iz <ul> */
+  padding: 0;
+  margin: 0;
+  display: flex; /* Koristi fleksibilni prikaz */
+  flex-direction: column; /* Postavi smjer kolone */
+}
+
+.repo-list li {
+  margin-bottom: 0px; /* Razmak između repozitorija */
+  width: 100%; /* Postavljena širina na 100% */
+}
+
+.repo-list li a {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #ccc; /* Debljina i boja okvira */
+  border-radius: 0px; /* Zaobljeni rubovi */
+  text-decoration: none; /* Uklanja podcrtavanje */
+  width: 100%; /* Postavi širinu na 100% */
+  box-sizing: border-box; /* Uključi padding i border u širinu */
+}
+

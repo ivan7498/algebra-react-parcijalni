@@ -3,6 +3,21 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  border:2px solid rgb(38, 38, 38);
+  border-radius: 4px;
+  width: 440px;
+}
+
+input{
+  color: rgb(31, 0, 117);
+  margin: 0px 0px 0px 0px;
+  display: flex;
+  width: 440px;
+  height: 34px;
+}
+
+input:focus{
+  outline: none;
 }
 
 .logo {
