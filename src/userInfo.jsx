@@ -26,7 +26,7 @@ function UserInfo({ userName }) {
         <div style={{ textAlign: "left" }}>
             <img src={avatar_url} alt="avatar" />
             <h4>NAME: <span>{name}</span></h4>
-            <h4>LOCATION:<span>{location}</span></h4>
+            <h4>LOCATION: <span>{location}</span></h4>
             <h4>BIO: <span>{bio}</span></h4>
             <h4>REPOSITORIES:</h4>
             <ul className="repo-list">
