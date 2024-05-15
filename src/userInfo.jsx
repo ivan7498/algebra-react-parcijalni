@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 const fetcher = (...args) => fetch(...args).then(response => response.json());
 
 function UserInfo({ userName }) {
-    const { data: userData, error: userError, isLoading: userIsLoading } = useSWR(`https://api.github.com/users/${userName.toLowerCase()}`, fetcher);
-    const { data: repoData, error: repoError, isLoading: repoIsLoading } = useSWR(`https://api.github.com/users/${userName.toLowerCase()}/repos`, fetcher);
+    const kebabCaseUsername = userName.replace(/\s+/g, '-').toLowerCase();
+
+    const { data: userData, error: userError, isLoading: userIsLoading } = useSWR(`https://api.github.com/users/${kebabCaseUsername}`, fetcher);
+    const { data: repoData, error: repoError, isLoading: repoIsLoading } = useSWR(`https://api.github.com/users/${kebabCaseUsername}/repos`, fetcher);
 
     if (userIsLoading || repoIsLoading) {
         return <p>Loading info about {userName}...</p>;
@@ -14,7 +16,7 @@ function UserInfo({ userName }) {
         return <p>There was an error loading {userName}, please check your input</p>;
     }
 
-    if (!userData || !userData.avatar_url || !userData.name || !userData.location || !userData.bio) {
+    if (!userData) {
         return <p>No user data found for {userName}.</p>;
     }
 
@@ -28,7 +30,6 @@ function UserInfo({ userName }) {
             <h4>BIO: <span>{bio}</span></h4>
             <h4>REPOSITORIES:</h4>
             <ul className="repo-list">
-                {/* Dodajemo provjeru da li je repoData niz prije mapiranja */}
                 {Array.isArray(repoData) && repoData.map(repo => (
                     <li key={repo.id}>
                         <a href={repo.html_url} target="_blank" rel="noopener noreferrer">{repo.name}</a>
